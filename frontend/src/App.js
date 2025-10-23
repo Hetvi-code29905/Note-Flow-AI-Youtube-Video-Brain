@@ -287,7 +287,7 @@ function App() {
     const progressInterval = simulateProgress(setNotesProgress);
     
     try {
-      const res = await fetch("http://localhost:5678/webhook/generate-notes", {
+      const res = await fetch("http://your-n8n-instance/webhook/generate-notes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url }),
@@ -324,7 +324,7 @@ function App() {
     setChatLoading(true);
     
     try {
-      const res = await fetch("http://localhost:5678/webhook/chat-with-docs", {
+      const res = await fetch("http://your-n8n-instance/webhook/chat-with-docs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url, question: userQuestion }),
@@ -371,7 +371,7 @@ function App() {
       };
 
       if (url.trim()) {
-        const res = await fetch("http://localhost:5678/webhook/generate-mindmap", {
+        const res = await fetch("http://your-n8n-instance/webhook/generate-mindmap", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ url }),
